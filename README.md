@@ -1,15 +1,15 @@
 # dotfiles
 
-My terminal setup, versioned so a fresh machine is one command away from feeling like home. Fish, tmux, kitty, and Neovim, on Linux.
+My terminal setup, versioned so a fresh machine is one command away from feeling like home. Fish, tmux, kitty, and Neovim, on Linux Fedora 44.
 
 ## What's inside
 
-| tool | role | notes |
-| --- | --- | --- |
-| **fish** | shell | custom prompt and functions (`ll`, `ls`, `cat`, `grep`, `find`, `n`), plus `conf.d` drop-ins |
-| **tmux** | multiplexer | plugins via TPM, session persistence with resurrect + continuum |
-| **kitty** | terminal | JetBrainsMono Nerd Font, Adwaita-dark theme (others bundled in `themes/`) |
-| **neovim** | editor | lives in its own repo, cloned by the installer |
+| tool       | role        | notes                                                                                        |
+| ---------- | ----------- | -------------------------------------------------------------------------------------------- |
+| **fish**   | shell       | custom prompt and functions (`ll`, `ls`, `cat`, `grep`, `find`, `n`), plus `conf.d` drop-ins |
+| **tmux**   | multiplexer | plugins via TPM, session persistence with resurrect + continuum                              |
+| **kitty**  | terminal    | JetBrainsMono Nerd Font, Adwaita-dark theme (others bundled in `themes/`)                    |
+| **neovim** | editor      | lives in its own repo, cloned by the installer                                               |
 
 ## Requirements
 
@@ -34,7 +34,7 @@ Then:
 
 ## How it's wired
 
-The real files live in this repo. The installer points `~/.config/<tool>` at them with symlinks, so editing a config here *is* editing the live one. No copying back and forth, no drift, and `git status` always tells the truth about what changed.
+The real files live in this repo. The installer points `~/.config/<tool>` at them with symlinks, so editing a config here _is_ editing the live one. No copying back and forth, no drift, and `git status` always tells the truth about what changed.
 
 ## What's deliberately not here
 
