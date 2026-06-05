@@ -1,0 +1,10 @@
+# fish: machine-local state, fish rewrites this on its own (paths, init flags)
+fish/fish_variables
+
+# tmux: plugins are fetched by TPM, not versioned here
+tmux/plugins/
+
+# editor / os noise
+*.log
+*.swp
+.DS_Store
