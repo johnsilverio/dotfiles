@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Galeria de temas do tmux. Sem plugin: cada tema é um themes/<nome>.conf com
+# as cores da status bar; o escolhido é persistido em themes/.current e
+# reaplicado no boot.
+#
+#   tmux-theme set <nome>   troca o tema agora e persiste (chamado pelo menu)
+#   tmux-theme apply        reaplica o tema persistido (chamado no boot)
+set -euo pipefail
+
+dir="${TMUX_THEME_DIR:-$HOME/.config/tmux/themes}"
+default="kanagawa-dragon"
+
+case "${1:-apply}" in
+  set)
+    theme="${2:?uso: tmux-theme set <nome>}"
+    if [ ! -f "$dir/$theme.conf" ]; then
+      tmux display-message "tema '$theme' não existe em $dir"
+      exit 1
+    fi
+    printf '%s\n' "$theme" > "$dir/.current"
+    tmux source-file "$dir/$theme.conf"
+    tmux display-message "tema: $theme"
+    ;;
+  apply)
+    theme="$(cat "$dir/.current" 2>/dev/null || printf '%s' "$default")"
+    [ -f "$dir/$theme.conf" ] || theme="$default"
+    tmux source-file "$dir/$theme.conf"
+    ;;
+  *)
+    echo "uso: tmux-theme {set <nome>|apply}" >&2
+    exit 2
+    ;;
+esac

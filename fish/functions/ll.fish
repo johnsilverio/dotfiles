@@ -1,5 +1,5 @@
-function ll --wraps='eza -la --icons --git' --description 'alias ll eza -la --icons --git (com padding-left)'
-    # Mesmo padding-left do ls; modo limpo quando não é terminal.
+function ll --wraps='eza -la --icons --git' --description 'alias ll eza -la --icons --git (margem esquerda)'
+    # Mesma margem de 1 espaço do ls; modo limpo quando não é terminal.
     set -l pad ' '
     if isatty stdout
         set -l cols $COLUMNS

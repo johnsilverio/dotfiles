@@ -1,7 +1,6 @@
-function ls --wraps='eza --icons' --description 'alias ls eza --icons (com padding-left)'
-    # Indenta a saída 1 espaço (mesmo padding do prompt) só quando vai pro
-    # terminal. Em pipe/redirecionamento (ls | grep, ls > arquivo) usa o
-    # modo limpo, sem padding e sem cor forçada.
+function ls --wraps='eza --icons' --description 'alias ls eza --icons (margem esquerda)'
+    # Indenta a saída 1 espaço (mesma margem do prompt) só quando vai pro
+    # terminal. Em pipe/redirecionamento usa o modo limpo, sem margem nem cor.
     set -l pad ' '
     if isatty stdout
         set -l cols $COLUMNS

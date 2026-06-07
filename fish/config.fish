@@ -15,11 +15,8 @@ if status is-interactive
             tmux set-environment FISH_CLEARED 1
         end
     end
-
-    # Respiro do topo: 1 linha em branco no início do shell, só pra o primeiro
-    # prompt não colar na barra do tmux (o prompt em si não tem padding-top,
-    # pra não criar vão entre prompts).
-    echo
+    # O respiro acima de cada prompt agora vem do próprio fish_prompt (1 linha
+    # em branco antes do contexto, estilo p10k), então não precisa de echo aqui.
 end
 zoxide init fish | source
 fzf --fish | source
